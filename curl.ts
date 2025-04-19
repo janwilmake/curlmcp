@@ -16,6 +16,8 @@ export const curl = async (request: Request) => {
     targetUrl = "https://" + targetUrl;
   }
 
+  console.log({ targetUrl });
+
   // Parse query parameters
   const params = new URLSearchParams(url.search);
 
@@ -107,6 +109,7 @@ export const curl = async (request: Request) => {
   }
 
   try {
+    console.log({ targetUrl, options });
     // Make the actual request
     const response = await fetch(targetUrl, options as RequestInit);
 
@@ -155,18 +158,16 @@ function getProxyConfig(url: string): any {
 
   // Example proxy configurations
   const proxyConfigs: Record<string, any> = {
-    "xymake.com": {
-      targetUrl: url.replace("xymake.com", "twitter.com"),
+    "x.com": {
+      targetUrl: url.replace("x.com", "xymake.com"),
       headers: {
         Accept: "text/markdown",
-        "X-Transform": "markdown",
       },
     },
-    "uithub.com": {
-      targetUrl: url.replace("uithub.com", "github.com"),
+    "github.com": {
+      targetUrl: url.replace("github.com", "uithub.com"),
       headers: {
         Accept: "text/markdown",
-        "X-Transform": "markdown",
       },
     },
   };

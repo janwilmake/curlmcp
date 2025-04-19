@@ -12,4 +12,4 @@
 
 # Add needed proxies
 
-- Add firecrawl
+- Add firecrawl or similar as fallback scraper

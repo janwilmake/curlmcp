@@ -4,14 +4,14 @@ import { curl } from "./curl";
 import openapi from "./openapi.json";
 
 type Env = {
+  CREDENTIALS: string;
   MCP_OBJECT: DurableObjectNamespace<MyMCP>;
 };
 
 type OpenapiOperation = any;
 
 /**
-TODO: I've done this before, let's find that and keep it simple (not merging the different rest params)
- */
+TODO: I've done this before, let's find that and keep it simple (not merging the different rest params)*/
 const operationToSchema = (operation: OpenapiOperation) => {
   // input params going into the tool
   return {
@@ -110,6 +110,17 @@ export default {
     const url = new URL(request.url);
 
     // TODO: Integrate oauth2 server
+
+    const authorization = request.headers
+      .get("authorization")
+      ?.slice("Basic ".length);
+
+    if (!authorization || atob(authorization) !== env.CREDENTIALS) {
+      return new Response("Unauthorized", {
+        status: 401,
+        headers: { "WWW-Authenticate": 'Basic realm="Protected"' },
+      });
+    }
 
     if (url.pathname.startsWith("/curl/")) {
       // regular rest-based execution of the endpoint
