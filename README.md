@@ -33,6 +33,17 @@ Install it into your MCP Client by adding the following to your config:
 }
 ```
 
+## Browser Usage
+
+The curlmcp api is easy to use from the browser too. Authentication is automatically handled.
+
+## CLI Usage
+
+You can simply use curl yourself, or to have the curl mcp proxy:
+
+- use `curl -c cookies.txt https://curlmcp.com/login` to login and store cookies
+- use `curl -b cookies.txt https://curlmcp.com/curl/{your-request}`
+
 ## API Usage: `/curl/{url}` Endpoint
 
 The `/curl/{url}` endpoint allows you to send HTTP requests to any URL, mimicking the behavior of the `curl` command-line tool. It supports long-form query parameters to specify request details, such as the HTTP method, headers, and data.
@@ -63,17 +74,6 @@ GET /curl/{url}?request={method}&header={header}&data={data}&...
 | `transform`      | string           | Applies transformations to the response (e.g., `markdown` for X/GitHub compatibility).                   | `transform=markdown`                          |
 | `instructions`   | string           | Specifies contextual instructions for the request.                                                       | `instructions=transform_response_to_markdown` |
 | `template_id`    | string           | Applies a predefined template of parameters.                                                             | `template_id=abc123`                          |
-
-## Browser Usage
-
-The curlmcp api is easy to use from the browser too. Authentication is automatically handled.
-
-## CLI Usage
-
-You can simply use curl yourself, or to have the curl mcp proxy:
-
-- use `curl -c cookies.txt https://curlmcp.com/login` to login and store cookies
-- use `curl -b cookies.txt https://curlmcp.com/curl/{your-request}`
 
 # Links
 
