@@ -100,4 +100,5 @@ GET /curl/{url}?request={method}&header={header}&data={data}&...
 
 # Links
 
-- Previous attempt: https://github.com/janwilmake/curlapi
+- Previous attempt (curl api): https://github.com/janwilmake/curlapi
+- Previous attempt (fetch mcp): https://github.com/janwilmake/fetch-mcp
