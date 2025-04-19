@@ -1,9 +1,9 @@
 # [curl MCP](https://curlmcp.com) - the last MCP you'll need
 
-Inspiration:
+[![janwilmake/curlmcp context](https://badge.forgithub.com/janwilmake/curlmcp?tab=readme-ov-file)](https://uithub.com/janwilmake/curlmcp?tab=readme-ov-file) [![Thread](https://badge.xymake.com/NathanWilbanks_/status/1898169822573175179?label=Inspiration_X_Thread)](https://xymake.com/NathanWilbanks_/status/1898169822573175179)
 
-- HTML: https://x.com/NathanWilbanks_/status/1898169822573175179
-- Markdown: https://xymake.com/NathanWilbanks_/status/1898169822573175179
+> [!IMPORTANT]
+> WORK IN PROGRESS
 
 Requirements:
 
