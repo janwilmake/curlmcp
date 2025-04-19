@@ -13,3 +13,9 @@ This could ensure that it shows a summary of how to use these operation(s) using
 # Conversation sessionId
 
 Ensure a sessionID of the conversation is sent, which we can use to estimate tokensize. When tokensize becomes excessively large, ensure instructions are added that summarize the obtained context so far and a link to start a new conversation.
+
+# safari ext for browsing in markdown and rendering it as markdown too
+
+https://claude.ai/share/952bfd94-ca94-4da1-8682-e8bdc9cf5d9a
+
+the goal would be to see if a website is fully LLM ready by clicking around and see if all is reachable and easy to understand.
