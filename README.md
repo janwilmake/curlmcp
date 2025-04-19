@@ -7,7 +7,8 @@
 
 Requirements:
 
-- Exposes simple REST OpenAPI as well as Remote MCP
+- Exposes simple REST API (with OpenAPI) as well as Remote MCP
+- Easy to use through any MCP client, through API, and through browsers.
 - X & GitHub OAuth
 - Stripe credit deposit
 - Contextual Instructions
@@ -15,19 +16,47 @@ Requirements:
 - Capped free use (per-hour ratelimit), pay as you go after hitting cap.
 - Shareable instruction templates
 
-## API Usage: /curl/{url} Endpoint
+# Usage
+
+## MCP Usage:
+
+Install it into your MCP Client by adding the following to your config:
+
+```json
+{
+  "mcpServers": {
+    "curlmcp": {
+      "command": "npx",
+      "args": ["mcp-remote", "https://curlmcp.com/sse"]
+    }
+  }
+}
+```
+
+## API Usage: `/curl/{url}` Endpoint
 
 The `/curl/{url}` endpoint allows you to send HTTP requests to any URL, mimicking the behavior of the `curl` command-line tool. It supports long-form query parameters to specify request details, such as the HTTP method, headers, and data.
 
-Certain urls are configured to be proxied based on your configured template (defaults to [proxy.json](proxy.json))
+Certain urls are configured to be proxied based on your configured template (defaults to [default-proxy.json](default-proxy.json))
 
-### Endpoint Syntax
+## Browser Usage
+
+The curlmcp api is easy to use from the browser too. Authentication is automatically handled.
+
+## CLI Usage
+
+You can simply use curl yourself, or to have the curl mcp proxy:
+
+- use `curl -c cookies.txt https://curlmcp.com/login` to login and store cookies
+- use `curl -b cookies.txt https://curlmcp.com/curl/{your-request}`
+
+# API Specification
 
 ```
 GET /curl/{url}?request={method}&header={header}&data={data}&...
 ```
 
-### Supported Query Parameters
+## Supported Query Parameters
 
 | Parameter        | Type             | Description                                                                                              | Example                                       |
 | ---------------- | ---------------- | -------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
