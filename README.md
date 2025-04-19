@@ -39,24 +39,13 @@ The `/curl/{url}` endpoint allows you to send HTTP requests to any URL, mimickin
 
 Certain urls are configured to be proxied based on your configured template (defaults to [default-proxy.json](default-proxy.json))
 
-## Browser Usage
-
-The curlmcp api is easy to use from the browser too. Authentication is automatically handled.
-
-## CLI Usage
-
-You can simply use curl yourself, or to have the curl mcp proxy:
-
-- use `curl -c cookies.txt https://curlmcp.com/login` to login and store cookies
-- use `curl -b cookies.txt https://curlmcp.com/curl/{your-request}`
-
-# API Specification
+### API Specification
 
 ```
 GET /curl/{url}?request={method}&header={header}&data={data}&...
 ```
 
-## Supported Query Parameters
+#### Supported Query Parameters
 
 | Parameter        | Type             | Description                                                                                              | Example                                       |
 | ---------------- | ---------------- | -------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
@@ -74,6 +63,17 @@ GET /curl/{url}?request={method}&header={header}&data={data}&...
 | `transform`      | string           | Applies transformations to the response (e.g., `markdown` for X/GitHub compatibility).                   | `transform=markdown`                          |
 | `instructions`   | string           | Specifies contextual instructions for the request.                                                       | `instructions=transform_response_to_markdown` |
 | `template_id`    | string           | Applies a predefined template of parameters.                                                             | `template_id=abc123`                          |
+
+## Browser Usage
+
+The curlmcp api is easy to use from the browser too. Authentication is automatically handled.
+
+## CLI Usage
+
+You can simply use curl yourself, or to have the curl mcp proxy:
+
+- use `curl -c cookies.txt https://curlmcp.com/login` to login and store cookies
+- use `curl -b cookies.txt https://curlmcp.com/curl/{your-request}`
 
 # Links
 
