@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>curl MCP - The last MCP you'll ever need</title>
+    <title>curl MCP - The last MCP you'll need</title>
     <style>
         body {
             font-family: 'Courier New', Courier, monospace;
@@ -24,6 +24,13 @@
 
         h1 {
             font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 1.8em;
             font-weight: bold;
             margin-bottom: 20px;
             text-transform: uppercase;
@@ -50,6 +57,31 @@
             color: #fff;
         }
 
+        .tweet-section {
+            background-color: #111;
+            padding: 40px 20px;
+        }
+
+        .tweet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tweet-embed {
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .pricing-section,
+        .security-section {
+            background-color: #111;
+            padding: 40px 20px;
+        }
+
         footer {
             margin-top: 50px;
             font-size: 0.9em;
@@ -61,13 +93,57 @@
 <body>
     <div class="container">
         <h1>The last MCP you'll need</h1>
-        <p>curl MCP: A powerful, lightweight, and reliable solution for your MCP needs. Built with simplicity and
-            performance in mind.</p>
+        <p>curl MCP: A powerful, lightweight, and reliable MCP built on HTTP standards.</p>
         <a href="https://github.com/janwilmake/curlmcp" class="cta">Get curl MCP on GitHub</a>
     </div>
+
+    <section class="tweet-section">
+        <h2>What People Are Saying</h2>
+        <div class="tweet-grid">
+            <div class="tweet-embed">
+                <blockquote class="twitter-tweet" data-dnt="true">
+                    <a href="https://twitter.com/janwilmake/status/1898169167175413863"></a>
+                </blockquote>
+            </div>
+            <div class="tweet-embed">
+                <blockquote class="twitter-tweet" data-dnt="true">
+                    Jan Wilmake (@janwilmake) <a href="https://twitter.com/janwilmake/status/1904951203340967987"></a>
+                </blockquote>
+            </div>
+            <div class="tweet-embed">
+                <blockquote class="twitter-tweet" data-dnt="true">
+                    <a href="https://twitter.com/samgoodwin89/status/1903175724250566796"></a>
+                </blockquote>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <section class="pricing-section">
+        <div class="container">
+            <h2>Pricing</h2>
+            <p>Freemium model: Use curl MCP for free. Easily add balance to your account to pay for
+                premium downstream markdown-proxies and unlock advanced functionality.</p>
+            <a href="https://github.com/janwilmake/curlmcp#pricing" class="cta">Learn More About Pricing</a>
+        </div>
+    </section>
+
+    <section class="security-section">
+        <div class="container">
+            <h2>Security</h2>
+            <p>OAuth 2.1 compliant with PKCE scope support, ensuring secure authentication and authorization for your
+                integrations.</p>
+            <a href="https://github.com/janwilmake/curlmcp#security" class="cta">Explore Security Features</a>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2025 curl MCP. Inspired by the simplicity of curl.</p>
+        <p>© 2025 curl MCP. Inspired by the simplicity of curl.</p>
     </footer>
+
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
 
 </html>

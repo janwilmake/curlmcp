@@ -71,13 +71,15 @@ You can simply use curl yourself, or to have the curl mcp proxy:
 
 The `/curl/{url}` endpoint allows you to send HTTP requests to any URL, mimicking the behavior of the `curl` command-line tool. It supports long-form query parameters to specify request details, such as the HTTP method, headers, and data.
 
-Certain urls are configured to be proxied based on your configured template (defaults to [default-proxy.json](default-proxy.json))
+Certain urls are configured to be proxied based on your configured template (defaults to [default-proxy.yaml](default-proxy.yaml))
 
 ### API Specification
 
 ```
 GET /curl/{url}?request={method}&header={header}&data={data}&...
 ```
+
+NB: {url} uses the `https` protocol by default.
 
 #### Supported Query Parameters
 

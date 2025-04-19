@@ -1,0 +1,8 @@
+instructions: |
+  For context about the user, check x.com/{xUsername} and github.com/{githubOwner}
+  When unsure about how a website works, use openapisearch.com/{domainOrQuery}
+
+proxies:
+  x.com: xymake.com
+  github.com: uithub.com
+# google.com: googllm.com (coming soon)
