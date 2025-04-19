@@ -1,0 +1,8 @@
+{
+  "name": "curlmcp",
+  "compatibility_date": "2025-04-19",
+  "assets": {
+    "directory": "./"
+  },
+  "dev": { "port": 3000 }
+}

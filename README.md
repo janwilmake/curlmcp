@@ -1,3 +1,5 @@
+# [curl MCP](https://curlmcp.com) - the last MCP you'll need
+
 Inspiration:
 
 - HTML: https://x.com/NathanWilbanks_/status/1898169822573175179
