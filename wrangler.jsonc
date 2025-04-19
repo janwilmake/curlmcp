@@ -4,5 +4,9 @@
   "assets": {
     "directory": "./"
   },
+  "routes": [
+    { "pattern": "curlmcp.com", "custom_domain": true },
+    { "pattern": "www.curlmcp.com", "custom_domain": true }
+  ],
   "dev": { "port": 3000 }
 }
