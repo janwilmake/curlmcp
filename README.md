@@ -96,9 +96,7 @@ NB: {url} uses the `https` protocol by default.
 | `location`       | boolean          | Follows HTTP redirects.                                                                                  | `location=true`                               |
 | `verbose`        | boolean          | Enables verbose output for debugging.                                                                    | `verbose=true`                                |
 | `access_token`   | string           | Injects an OAuth token for X or GitHub authentication.                                                   | `access_token=xyz`                            |
-| `transform`      | string           | Applies transformations to the response (e.g., `markdown` for X/GitHub compatibility).                   | `transform=markdown`                          |
 | `instructions`   | string           | Specifies contextual instructions for the request.                                                       | `instructions=transform_response_to_markdown` |
-| `template_id`    | string           | Applies a predefined template of parameters.                                                             | `template_id=abc123`                          |
 
 # Links
 

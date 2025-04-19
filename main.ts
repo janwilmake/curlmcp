@@ -1,13 +1,10 @@
 import { McpAgent } from "agents/mcp";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { curl } from "./curl";
 import openapi from "./openapi.json";
 
 type Env = {
   MCP_OBJECT: DurableObjectNamespace<MyMCP>;
-};
-
-const curl = async (request: Request) => {
-  return new Response("Result");
 };
 
 type OpenapiOperation = any;
