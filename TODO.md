@@ -1,0 +1,4 @@
+- Add my own X oauth with stripe payments and dashboard where api keys can be created (First make that work at https://github.com/janwilmake/xymake.oauth-stripe-template).
+- Setup remote mcp (`/sse`) hosted in cloudflare behind my own authwall (Take example from https://github.com/cloudflare/ai/tree/main/demos/remote-mcp-server, but without the auth, as I provide that myself)
+- Add `/openapi.json`, `/slop.md`, etc
+- Perform downstream payments via personal API tokens.

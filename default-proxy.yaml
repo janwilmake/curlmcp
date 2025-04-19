@@ -5,4 +5,6 @@ instructions: |
 proxies:
   x.com: xymake.com
   github.com: uithub.com
+  *: reader.llmtext.com/md/*
+# *: firecrawl.com
 # google.com: googllm.com (coming soon)
