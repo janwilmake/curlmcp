@@ -1,3 +1,4 @@
+/** CURL request->response. Pretty much 100% implemented by Claude*/
 export const curl = async (request: Request) => {
   const url = new URL(request.url);
   const pathname = url.pathname;
