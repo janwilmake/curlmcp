@@ -1,6 +1,6 @@
 # [curl mcp](https://curlmcp.com) - the last MCP you'll need
 
-[![janwilmake/curlmcp context](https://badge.forgithub.com/janwilmake/curlmcp)](https://uithub.com/janwilmake/curlmcp?tab=readme-ov-file) [![Thread](https://badge.xymake.com/NathanWilbanks_/status/1898169822573175179?label=Inspiration_X_Thread&a)](https://xymake.com/NathanWilbanks_/status/1898169822573175179)
+[![janwilmake/curlmcp context](https://badge.forgithub.com/janwilmake/curlmcp)](https://uithub.com/janwilmake/curlmcp?tab=readme-ov-file) [![Thread](https://badge.xymake.com/NathanWilbanks_/status/1898169822573175179?label=Inspiration_SLOP&a)](https://xymake.com/NathanWilbanks_/status/1898169822573175179) [![Thread](https://badge.xymake.com/janwilmake/status/1903372996128960928?label=Inspiration_Sam)](https://xymake.com/janwilmake/status/1903372996128960928)
 
 > [!IMPORTANT]
 > WORK IN PROGRESS
@@ -15,6 +15,29 @@ Requirements:
 - Markdown Transformation Proxy for popular websites such as X and GitHub
 - Capped free use (per-hour ratelimit), pay as you go after hitting cap.
 - Shareable instruction templates
+
+# My principles for making the LLM actually work well with tons of tools:
+
+1. As the LLM knows popular websites, instruct it to simply use the web like normal.
+2. Under water, ensure every input is somehow routed to the right substitute website(s).
+3. Ensure every response is markdown and contains very few tokens, ideally less than 1000! This ensures we can do many steps.
+4. Ensure the dead ends guide the LLM back on track.
+5. Ensure every step in a multi-step process contains instructions about what to do next.
+6. Ensure the path the LLM visit is the same as the path the user or crawler visits. Respond well on accept header and other information to distinguish.
+
+How should product builders of today become ready to allow for this?
+
+1. Most APIs use POST, but GET is easier to be instructed about, as it can be done in markdown. Let's promote making APIs GET and promote super easy to understand URL structures with minimal token length.
+2. Ensure to use OpenAPI to show the possible endpoints and routing. Your API should be the first-class citizen, not your website.
+3. Ensure to make your openapi explorable by either putting it right on the root at `/openapi.json`, or by putting redirecting to it from `/.well-known/openapi` if that's not possible.
+4. Ensure all your pages that are exposed as text/html also expose a non-html variant (preferably markdown, or yaml if structured data can also be useful) that is under 1000 tokens with the same/similar functionality.
+5. Hitting errors in your API should always guide the agent back on track, just like we do with humans. Try buildling these UX pathways on the API level!
+
+Is it somehow possible to provide this as a middleware to APIs? For sure! The one tool to rule them all is curl (or fetch), and it could be made safe in the following way:
+
+- Ensure to route away from human-first websites to ai-optimised websites.
+- Ensure to truncate the response to never be above a certain limit
+- Ensure to prefer accepting markdown
 
 # Usage
 
