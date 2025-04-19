@@ -4,9 +4,25 @@
   "assets": {
     "directory": "./"
   },
+  "main": "./main.ts",
   "routes": [
     { "pattern": "curlmcp.com", "custom_domain": true },
     { "pattern": "www.curlmcp.com", "custom_domain": true }
   ],
-  "dev": { "port": 3000 }
+  "dev": { "port": 3000 },
+  "compatibility_flags": ["nodejs_compat"],
+  "migrations": [
+    {
+      "new_sqlite_classes": ["MyMCP"],
+      "tag": "v1"
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "class_name": "MyMCP",
+        "name": "MCP_OBJECT"
+      }
+    ]
+  }
 }
