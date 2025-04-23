@@ -8,7 +8,7 @@
 
 # 2) Add auth and payments
 
-- Add my own X oauth with stripe payments and dashboard where api keys can be created (First make that work at https://github.com/janwilmake/xymake.oauth-stripe-template).
+- Add my own X oauth with Stripe payments and dashboard where api keys can be created (First make that work at https://github.com/janwilmake/xymake.oauth-stripe-template).
 - Perform downstream payments via my own personal API tokens.
 
 # 3) Add needed proxies

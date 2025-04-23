@@ -19,3 +19,7 @@ Ensure a sessionID of the conversation is sent, which we can use to estimate tok
 https://claude.ai/share/952bfd94-ca94-4da1-8682-e8bdc9cf5d9a
 
 the goal would be to see if a website is fully LLM ready by clicking around and see if all is reachable and easy to understand.
+
+# other name
+
+mcp-mcp
