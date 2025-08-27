@@ -18,3 +18,12 @@
 # 4) openapi-to-mcp
 
 Abstract the openapi-to-mcp into a middleware that can be passed the openapi.
+
+Idea:
+
+Use this to fetch `llms.txt` - https://claude.ai/share/6231d6c7-9b22-4689-a6e5-387d9a2afd87
+
+Either of these
+
+- https://smithery.ai/server/@jiankaitian/servers
+- https://github.com/janwilmake/curlmcp
