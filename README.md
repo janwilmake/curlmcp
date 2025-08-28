@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/janwilmake-curlmcp-badge.png)](https://mseep.ai/app/janwilmake-curlmcp)
+
 # [curl mcp](https://curlmcp.com) - the last MCP you'll need
 
 [![janwilmake/curlmcp context](https://badge.forgithub.com/janwilmake/curlmcp)](https://uithub.com/janwilmake/curlmcp?tab=readme-ov-file) [![Thread](https://badge.xymake.com/NathanWilbanks_/status/1898169822573175179?label=Inspiration_SLOP&a)](https://xymake.com/NathanWilbanks_/status/1898169822573175179) [![Thread](https://badge.xymake.com/janwilmake/status/1903372996128960928?label=Inspiration_Sam)](https://xymake.com/janwilmake/status/1903372996128960928)
