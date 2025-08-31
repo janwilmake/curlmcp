@@ -109,7 +109,16 @@ export const curl = async (request: Request) => {
   }
 
   try {
-    console.log({ targetUrl, options });
+    // Log request without exposing credentials
+    const safeOptions = {
+      ...options,
+      headers: Object.fromEntries(
+        Object.entries(options.headers).map(([key, value]) =>
+          key.toLowerCase() === 'authorization' ? [key, '[REDACTED]'] : [key, value]
+        )
+      )
+    };
+    console.log({ targetUrl, options: safeOptions });
     // Make the actual request
     const response = await fetch(targetUrl, options as RequestInit);
 
