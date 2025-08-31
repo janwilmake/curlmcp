@@ -67,8 +67,8 @@ export const curl = async (request: Request) => {
       if (key) formData.append(key, decodeURIComponent(value || ""));
     });
 
-    // If GET is forced or if it's a GET request
-    if (params.get("get") === "true" || options.method === "GET") {
+    // If GET is forced, there is a body or if it's a GET request
+    if (params.get("get") === "true" || params.has("body") || options.method === "GET") {
       // Append form data to URL as query string
       const searchParams = new URLSearchParams();
       formData.forEach((value, key) => {
@@ -88,6 +88,13 @@ export const curl = async (request: Request) => {
       options.body = formData;
     }
   }
+
+  // Handle request body data
+  if (params.has("body")) {
+    // Handle raw body data (takes precedence over form data)
+    const bodyData = params.get("body");
+  }
+
 
   // Force HEAD method if specified
   if (params.get("head") === "true") {

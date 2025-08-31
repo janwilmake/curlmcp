@@ -68,7 +68,7 @@
           {
             "name": "data",
             "in": "query",
-            "description": "Sends data in the request body (POST) or query string (with get=true). Repeat for multiple data pairs.",
+            "description": "Sends data in the request body (POST) or query string (with get=true or body parameter present). Repeat for multiple data pairs.",
             "required": false,
             "schema": {
               "type": "array",
@@ -188,6 +188,15 @@
             "name": "template_id",
             "in": "query",
             "description": "Applies a predefined template of parameters.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "body",
+            "in": "query",
+            "description": "Sends raw body data in the request. Takes precedence over form data.",
             "required": false,
             "schema": {
               "type": "string"

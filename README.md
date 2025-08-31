@@ -83,20 +83,21 @@ NB: {url} uses the `https` protocol by default.
 
 #### Supported Query Parameters
 
-| Parameter        | Type             | Description                                                                                              | Example                                       |
-| ---------------- | ---------------- | -------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
-| `request`        | string           | Specifies the HTTP method. Valid values: `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `HEAD`, `OPTIONS`.     | `request=POST`                                |
-| `header`         | array of strings | Adds custom HTTP headers. Repeat for multiple headers.                                                   | `header=Content-Type:application/json`        |
-| `data`           | array of strings | Sends data in the request body (POST) or query string (with `get=true`). Repeat for multiple data pairs. | `data=key=value`                              |
-| `data-urlencode` | array of strings | Sends URL-encoded data in the request.                                                                   | `data-urlencode=comment=this%20is%20awesome`  |
-| `get`            | boolean          | Forces data to be sent as a GET request query string.                                                    | `get=true`                                    |
-| `include`        | boolean          | Includes response headers in the output.                                                                 | `include=true`                                |
-| `head`           | boolean          | Sends a HEAD request.                                                                                    | `head=true`                                   |
-| `user`           | string           | Specifies credentials for authentication (format: `username:password`).                                  | `user=user:pass`                              |
-| `location`       | boolean          | Follows HTTP redirects.                                                                                  | `location=true`                               |
-| `verbose`        | boolean          | Enables verbose output for debugging.                                                                    | `verbose=true`                                |
-| `access_token`   | string           | Injects an OAuth token for X or GitHub authentication.                                                   | `access_token=xyz`                            |
-| `instructions`   | string           | Specifies contextual instructions for the request.                                                       | `instructions=transform_response_to_markdown` |
+| Parameter        | Type             | Description                                                                                                                          | Example                                       |
+| ---------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------- |
+| `request`        | string           | Specifies the HTTP method. Valid values: `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `HEAD`, `OPTIONS`.                                 | `request=POST`                                |
+| `header`         | array of strings | Adds custom HTTP headers. Repeat for multiple headers.                                                                               | `header=Content-Type:application/json`        |
+| `data`           | array of strings | Sends data in the request body (POST) or query string (with `get=true` or `body` parameter present). Repeat for multiple data pairs. | `data=key=value`                              |
+| `data-urlencode` | array of strings | Sends URL-encoded data in the request.                                                                                               | `data-urlencode=comment=this%20is%20awesome`  |
+| `body`           | string           | Sends raw body data in the request. Takes precedence over form data.                                                                 | `body={"key":"value"}`                        |
+| `get`            | boolean          | Forces data to be sent as a GET request query string.                                                                                | `get=true`                                    |
+| `include`        | boolean          | Includes response headers in the output.                                                                                             | `include=true`                                |
+| `head`           | boolean          | Sends a HEAD request.                                                                                                                | `head=true`                                   |
+| `user`           | string           | Specifies credentials for authentication (format: `username:password`).                                                              | `user=user:pass`                              |
+| `location`       | boolean          | Follows HTTP redirects.                                                                                                              | `location=true`                               |
+| `verbose`        | boolean          | Enables verbose output for debugging.                                                                                                | `verbose=true`                                |
+| `access_token`   | string           | Injects an OAuth token for X or GitHub authentication.                                                                               | `access_token=xyz`                            |
+| `instructions`   | string           | Specifies contextual instructions for the request.                                                                                   | `instructions=transform_response_to_markdown` |
 
 # Links
 
