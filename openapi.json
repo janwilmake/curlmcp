@@ -1,35 +1,35 @@
 {
-  "openapi": "3.0.3",
   "info": {
     "title": "curl mcp API",
     "description": "API for curl mcp - the last MCP you'll need. Allows making HTTP requests to any URL through a simple REST API, mimicking the behavior of the curl command-line tool.",
-    "version": "1.0.0",
-    "contact": {
-      "name": "Jan Wilmake",
-      "url": "https://curlmcp.com"
+    "version": "2.0.0"
+  },
+  "servers": [{ "url": "https://curlmcp.com" }],
+  "security": [{ "BearerAuth": [] }],
+  "components": {
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "description": "Bearer token for authentication"
+      }
     }
   },
-  "servers": [
-    {
-      "url": "https://curlmcp.com",
-      "description": "Production server"
-    }
-  ],
+
   "paths": {
     "/curl/{url}": {
       "get": {
+        "operationId": "curlRequest",
         "summary": "Make a curl request to any URL",
         "description": "Sends an HTTP request to the specified URL with the given parameters, mimicking the behavior of the curl command-line tool.",
-        "operationId": "curlRequest",
         "parameters": [
           {
             "name": "url",
             "in": "path",
             "description": "The URL to send the request to (defaults to https protocol)",
             "required": true,
-            "schema": {
-              "type": "string"
-            }
+            "schema": { "type": "string" }
           },
           {
             "name": "request",
@@ -57,9 +57,7 @@
             "required": false,
             "schema": {
               "type": "array",
-              "items": {
-                "type": "string"
-              }
+              "items": { "type": "string" }
             },
             "style": "form",
             "explode": true,
@@ -72,9 +70,7 @@
             "required": false,
             "schema": {
               "type": "array",
-              "items": {
-                "type": "string"
-              }
+              "items": { "type": "string" }
             },
             "style": "form",
             "explode": true,
@@ -87,9 +83,7 @@
             "required": false,
             "schema": {
               "type": "array",
-              "items": {
-                "type": "string"
-              }
+              "items": { "type": "string" }
             },
             "style": "form",
             "explode": true,
@@ -100,39 +94,28 @@
             "in": "query",
             "description": "Forces data to be sent as a GET request query string.",
             "required": false,
-            "schema": {
-              "type": "boolean",
-              "default": false
-            }
+            "schema": { "type": "boolean", "default": false }
           },
           {
             "name": "include",
             "in": "query",
             "description": "Includes response headers in the output.",
             "required": false,
-            "schema": {
-              "type": "boolean",
-              "default": false
-            }
+            "schema": { "type": "boolean", "default": false }
           },
           {
             "name": "head",
             "in": "query",
             "description": "Sends a HEAD request.",
             "required": false,
-            "schema": {
-              "type": "boolean",
-              "default": false
-            }
+            "schema": { "type": "boolean", "default": false }
           },
           {
             "name": "user",
             "in": "query",
             "description": "Specifies credentials for authentication (format: username:password).",
             "required": false,
-            "schema": {
-              "type": "string"
-            },
+            "schema": { "type": "string" },
             "example": "user:pass"
           },
           {
@@ -140,209 +123,51 @@
             "in": "query",
             "description": "Follows HTTP redirects.",
             "required": false,
-            "schema": {
-              "type": "boolean",
-              "default": true
-            }
+            "schema": { "type": "boolean", "default": true }
           },
           {
             "name": "verbose",
             "in": "query",
             "description": "Enables verbose output for debugging.",
             "required": false,
-            "schema": {
-              "type": "boolean",
-              "default": false
-            }
+            "schema": { "type": "boolean", "default": false }
           },
           {
             "name": "access_token",
             "in": "query",
             "description": "Injects an OAuth token for X or GitHub authentication.",
             "required": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "transform",
-            "in": "query",
-            "description": "Applies transformations to the response (e.g., markdown for X/GitHub compatibility).",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": ["markdown"]
-            }
+            "schema": { "type": "string" }
           },
           {
             "name": "instructions",
             "in": "query",
             "description": "Specifies contextual instructions for the request.",
             "required": false,
-            "schema": {
-              "type": "string"
-            },
+            "schema": { "type": "string" },
             "example": "transform_response_to_markdown"
-          },
-          {
-            "name": "template_id",
-            "in": "query",
-            "description": "Applies a predefined template of parameters.",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
           "200": {
             "description": "Successful response",
             "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "status": {
-                      "type": "integer",
-                      "description": "HTTP status code of the response"
-                    },
-                    "headers": {
-                      "type": "object",
-                      "description": "Headers of the response (included when include=true)"
-                    },
-                    "body": {
-                      "type": "string",
-                      "description": "Body of the response"
-                    }
-                  }
-                }
-              },
-              "text/markdown": {
-                "schema": {
-                  "type": "string",
-                  "description": "Transformed markdown response (when transform=markdown)"
-                }
-              }
+              "text/plain": { "schema": { "type": "string" } },
+              "text/markdown": { "schema": { "type": "string" } },
+              "application/json": { "schema": { "type": "object" } }
             }
           },
           "400": {
             "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "error": {
-                      "type": "string",
-                      "description": "Error message"
-                    }
-                  }
-                }
-              }
-            }
+            "content": { "text/plain": { "schema": { "type": "string" } } }
           },
           "401": {
             "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "error": {
-                      "type": "string",
-                      "description": "Error message"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "error": {
-                      "type": "string",
-                      "description": "Error message"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "429": {
-            "description": "Too many requests (rate limit exceeded)",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "error": {
-                      "type": "string",
-                      "description": "Error message"
-                    },
-                    "rate_limit_reset": {
-                      "type": "integer",
-                      "description": "Unix timestamp when the rate limit will reset"
-                    }
-                  }
-                }
-              }
-            }
+            "content": { "text/plain": { "schema": { "type": "string" } } }
           },
           "500": {
             "description": "Internal server error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "error": {
-                      "type": "string",
-                      "description": "Error message"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "oauth2": []
-          }
-        ]
-      }
-    },
-    "/login": {
-      "get": {
-        "summary": "Login to curl mcp",
-        "description": "Login page for curl mcp. Can be used with browser cookies for authentication.",
-        "operationId": "login",
-        "responses": {
-          "200": {
-            "description": "Login page"
-          }
-        }
-      }
-    }
-  },
-  "components": {
-    "securitySchemes": {
-      "oauth2": {
-        "type": "oauth2",
-        "flows": {
-          "authorizationCode": {
-            "authorizationUrl": "https://curlmcp.com/authorize",
-            "tokenUrl": "https://curlmcp.com/callback",
-            "scopes": {
-              "curl": "Access to make curl requests",
-              "read": "Read access to templates and history",
-              "write": "Write access to templates"
-            }
+            "content": { "text/plain": { "schema": { "type": "string" } } }
           }
         }
       }

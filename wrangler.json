@@ -1,0 +1,26 @@
+{
+  "$schema": "https://unpkg.com/wrangler@latest/config-schema.json",
+  "name": "curlmcp",
+  "compatibility_date": "2025-09-08",
+  "main": "main.ts",
+  "dev": { "port": 3000 },
+  "vars": {
+    "PORT": "3000",
+    "OAUTH_PROVIDER_HOST": "localhost:8787"
+  },
+  "assets": {
+    "directory": "./"
+  },
+  "env": {
+    "production": {
+      "vars": {
+        "PORT": "3000",
+        "OAUTH_PROVIDER_HOST": "login.wilmake.com"
+      },
+      "routes": [
+        { "pattern": "curlmcp.com", "custom_domain": true },
+        { "pattern": "www.curlmcp.com", "custom_domain": true }
+      ]
+    }
+  }
+}

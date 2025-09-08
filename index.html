@@ -41,6 +41,23 @@
             margin-bottom: 30px;
         }
 
+        .install-section {
+            background-color: #111;
+            padding: 40px 20px;
+            margin: 40px 0;
+            border-radius: 10px;
+        }
+
+        .code-block {
+            background-color: #222;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            text-align: left;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+
         .cta {
             display: inline-block;
             padding: 10px 20px;
@@ -50,36 +67,12 @@
             font-weight: bold;
             border: 2px solid #fff;
             transition: background-color 0.3s, color 0.3s;
+            margin: 10px;
         }
 
         .cta:hover {
             background-color: #000;
             color: #fff;
-        }
-
-        .tweet-section {
-            background-color: #111;
-            padding: 40px 20px;
-        }
-
-        .tweet-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .tweet-embed {
-            background-color: #222;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .pricing-section,
-        .security-section {
-            background-color: #111;
-            padding: 40px 20px;
         }
 
         footer {
@@ -92,58 +85,39 @@
 
 <body>
     <div class="container">
-        <h1>The last MCP you'll need</h1>
-        <p>curl MCP: A powerful, lightweight, and reliable MCP built on HTTP standards.</p>
-        <a href="https://github.com/janwilmake/curlmcp" class="cta">Get curl MCP on GitHub</a>
+        <h1>curl MCP</h1>
+        <p>The last MCP you'll need. A powerful HTTP client for your AI assistant.</p>
+
+        <section class="install-section">
+            <h2>Installation</h2>
+
+            <h3>Remote MCP Server (Recommended)</h3>
+            <p>Works with Claude.ai, GPT connectors, and any other MCP client</p>
+            <div class="code-block">
+                https://curlmcp.com/mcp
+            </div>
+
+            <h3>Local Installation</h3>
+            <p>Clone and run locally:</p>
+            <pre class="code-block">
+                {
+                    "mcpServers": {
+                        "curlmcp": {
+                            "command": "npx",
+                            "args": ["mcp-remote", "https://curlmcp.com/mcp"]
+                        }
+                    }
+                }
+            </pre>
+        </section>
+
+        <a href="https://github.com/janwilmake/curlmcp" class="cta">View on GitHub</a>
+        <a href="https://curlmcp.com/openapi.json" class="cta">API Documentation</a>
     </div>
-
-    <section class="tweet-section">
-        <h2>What People Are Saying</h2>
-        <div class="tweet-grid">
-            <div class="tweet-embed">
-                <blockquote class="twitter-tweet" data-dnt="true">
-                    <a href="https://twitter.com/janwilmake/status/1898169167175413863"></a>
-                </blockquote>
-            </div>
-            <div class="tweet-embed">
-                <blockquote class="twitter-tweet" data-dnt="true">
-                    Jan Wilmake (@janwilmake) <a href="https://twitter.com/janwilmake/status/1904951203340967987"></a>
-                </blockquote>
-            </div>
-            <div class="tweet-embed">
-                <blockquote class="twitter-tweet" data-dnt="true">
-                    <a href="https://twitter.com/samgoodwin89/status/1903175724250566796"></a>
-                </blockquote>
-            </div>
-        </div>
-
-    </section>
-
-
-
-    <section class="pricing-section">
-        <div class="container">
-            <h2>Pricing</h2>
-            <p>Freemium model: Use curl MCP for free. Easily add balance to your account to pay for
-                premium downstream markdown-proxies and unlock advanced functionality.</p>
-            <a href="https://github.com/janwilmake/curlmcp#pricing" class="cta">Learn More About Pricing</a>
-        </div>
-    </section>
-
-    <section class="security-section">
-        <div class="container">
-            <h2>Security</h2>
-            <p>OAuth 2.1 compliant with PKCE scope support, ensuring secure authentication and authorization for your
-                integrations.</p>
-            <a href="https://github.com/janwilmake/curlmcp#security" class="cta">Explore Security Features</a>
-        </div>
-    </section>
 
     <footer>
         <p>© 2025 curl MCP. Inspired by the simplicity of curl.</p>
     </footer>
-
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
 
 </html>

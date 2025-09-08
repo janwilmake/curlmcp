@@ -1,7 +1,17 @@
 {
+  "name": "curlmcp",
+  "version": "2.0.0",
+  "description": "curl MCP with X OAuth - the last MCP you'll need",
+  "main": "main.ts",
   "dependencies": {
-    "workers-mcp": "^0.1.0-3",
-    "@modelcontextprotocol/sdk": "^1.7.0",
-    "agents": "^0.0.53"
+    "simplerauth-client": "^0.0.14",
+    "with-mcp": "^0.0.12"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250906.0"
+  },
+  "scripts": {
+    "dev": "wrangler dev --env=\"\"",
+    "deploy": "wrangler deploy --env production"
   }
 }
